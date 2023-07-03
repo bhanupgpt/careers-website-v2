@@ -47,11 +47,19 @@
 <body>
   <div class="container">
     <h1 class="text-center mt-2 mb-4">WorkWise Careers </h1>
+    
     <img id="banner" class="img-fluid" src="https://careers-website--bhanupgpt.repl.co/static/banner.jpg" alt="banner image">
+    
     <h2 class="text-center mt-2 mb-4">About WorkWise</h2>
     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    
     <h2 class="text-center mt-2 mb-4">Job Openings</h2>
-    <p>TODO show open job positions</p>
+    <div>
+      {% for job in jobs %}
+        {% include 'openjobs.html'%}
+      {% endfor %}
+    </div>
+    
     <div class="text-center">
       <button type="button" class="btn btn-secondary btn-lg">Contact Us</button>
       <p class="mt-4">Copyright 2022, Bhanupriya Gupta</p>
