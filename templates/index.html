@@ -9,51 +9,35 @@
 
   <title>WorkWise Careers</title>
   <style>
-   
-    /* h1 {
-      font-size: 40px;
-      font-family: Roboto;
-      font-weight: normal;
-      color: rgb(50, 50, 50);
-      text-align: center;
-    } */
     #banner {
       width: 100%;
       height: 360px;
       object-fit: cover;
+      margin-bottom: 16px;
     }
-    /* h2 {
-      font-family: Roboto;
-      font-size: 32px;
-      color: rgb(100, 100, 100);
-      text-align: center;
-      font-weight: normal;
-    }
-    .aboutText, .openingsText {
-      font-family: Roboto;
-      color; rgb(80, 80, 80);
-    }
-    #container {
-      max-width: 720px;
-      margin: 0 auto 0 auto;
-    }
-    #contactbutton {
-      text-align: center;
-    }
-     */
+    
   </style>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
+  {% include 'nav.html' %}
+  <img id="banner" class="img-fluid" src="https://careers-website--bhanupgpt.repl.co/static/banner.jpg" alt="banner image">
+    
   <div class="container">
     <h1 class="text-center mt-2 mb-4">WorkWise Careers </h1>
     
-    <img id="banner" class="img-fluid" src="https://careers-website--bhanupgpt.repl.co/static/banner.jpg" alt="banner image">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+        <img src="/static/ppl.jpg" alt="ppl working" height="320px" >
+      </div>
+      
+    </div>
     
-    <h2 class="text-center mt-2 mb-4">About WorkWise</h2>
-    <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h2 class="text-center mt-4 mb-4">Job Openings</h2>
     
-    <h2 class="text-center mt-2 mb-4">Job Openings</h2>
     <div>
       {% for job in jobs %}
         {% include 'openjobs.html'%}
@@ -61,10 +45,10 @@
     </div>
     
     <div class="text-center">
-      <button type="button" class="btn btn-secondary btn-lg">Contact Us</button>
-      <p class="mt-4">Copyright 2022, Bhanupriya Gupta</p>
+      <a href="mailto:bhanu@kgpian.iitkgp.ac.in" type="button" class="btn btn-secondary btn-lg">Contact Us</a>
     </div>
   
 </div>
+  {% include 'footer.html' %}
 </body>
 </html>
