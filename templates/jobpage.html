@@ -16,7 +16,7 @@
     
     <h4>Responsibilities</h4>
     <ul>
-      {% for line in job.responibilities.split("\n") %}
+      {% for line in job.responsibilities.split("\n") %}
         <li>{{line}}</li>
       {% endfor %}
     </ul>
@@ -30,7 +30,7 @@
     <h4>Salary</43>
     <p>{{job.currency}} {{job.salary}}</p>
 
-    {% include application_form.html%}
+    {% include 'application_form.html' %}
   </div>
   {% include 'footer.html' %}
 </body>
