@@ -26,12 +26,14 @@ def load_jobs_from_db():
 
 def load_job_page_from_db(id):
   with engine.connect() as conn:
-    stmt = text("SELECT * FROM jobs WHERE id=:val")
-    stmt = stmt.bindparams(val=id)
-    result = conn.execute(stmt)
-    rows = result.all()
+    val = id
+    result = conn.execute(
+      text(f"SELECT * FROM jobs WHERE id = {val}"),
+      
+    )
+    rows = result.mappings().all()
     if len(rows) == 0:
       return None
     else:
-      return rows[0]._asdict()
+      return dict(rows[0])
       
