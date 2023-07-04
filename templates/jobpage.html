@@ -15,10 +15,18 @@
     <p class="lead mt-0">{{job.location}}</p>
     
     <h4>Responsibilities</h4>
-    
+    <ul>
+      {% for line in job.responibilities.split("\n") %}
+        <li>{{line}}</li>
+      {% endfor %}
+    </ul>
     <p>{{job.responsibilities}}</p>
     <h4>Requirements</h4>
-    <p>{{job.requirements}}</p>
+    <ol>
+      {% for line in job.requirements.split("\n") %}
+        <li>{{line}}</li>
+      {% endfor %}
+    </ol>
     <h4>Salary</43>
     <p>{{job.currency}} {{job.salary}}</p>
   </div>
