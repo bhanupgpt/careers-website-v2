@@ -26,6 +26,12 @@ def show_job(id):
   return render_template('jobpage.html', job=job)
 
 
+@app.route("/api/job/<id>")
+def show_job_json(id):
+  job = load_job_page_from_db(id)
+  return jsonify(job)
+
+
 @app.route("/job/<id>/apply", methods=['post'])
 def apply_to_job(id):
   data = request.form
@@ -38,4 +44,4 @@ def apply_to_job(id):
 
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080, debug=True)
+  app.run(host='0.0.0.0', debug=True)

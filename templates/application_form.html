@@ -3,17 +3,17 @@
   <form action="/job/{{job['id']}}/apply" method="post">
     <div class="mb-3">
       <label for="">Full Name</label> <br>
-      <input type="text" name="full_name" placeholder="Bhanupriya Gupta">
+      <input type="text" name="full_name" placeholder="Bhanupriya Gupta" required>
     </div>
 
     <div class="mb-3">
       <label for="">Email</label> <br>
-      <input type="text" name="email" placeholder="bhanu@kgpian.kiitkgp.ac.in">
+      <input type="email" name="email" placeholder="bhanu@kgpian.kiitkgp.ac.in" required>
     </div>
 
     <div class="mb-3">
       <label for="">LinkedIn URL</label> <br>
-      <input type="text" name="linkedin_url" placeholder="https://linkedin.com/in/bhanupriya-gupta">
+      <input type="url" name="linkedin_url" placeholder="https://linkedin.com/in/bhanupriya-gupta" required>
     </div>
 
     <div class="mb-3">
@@ -28,7 +28,7 @@
 
     <div class="mb-3">
       <label for="">Resume URL</label> <br>
-      <input type="text" name="resume_url">
+      <input type="url" name="resume_url" required>
     </div>
 
     <input type="submit"> 
