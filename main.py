@@ -33,6 +33,7 @@ def show_job_json(id):
 
 
 @app.route("/job/<id>/apply", methods=['post'])
+# resolve issues here
 def apply_to_job(id):
   data = request.form
   add_application_to_db(id, data)
