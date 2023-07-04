@@ -8,6 +8,7 @@
   {% include 'nav.html' %}
   {% include 'banner.html' %}
   <div class="container">
+    
     <h1 class="text-center mt-2 mb-4">WorkWise Careers </h1>
     <h3>{{job.title}}</h3>
     
@@ -20,16 +21,17 @@
         <li>{{line}}</li>
       {% endfor %}
     </ul>
-    <p>{{job.responsibilities}}</p>
+    
     <h4>Requirements</h4>
     <ol>
       {% for line in job.requirements.split("\n") %}
         <li>{{line}}</li>
       {% endfor %}
     </ol>
+    
     <h4>Salary</43>
     <p>{{job.currency}} {{job.salary}}</p>
-
+      
     {% include 'application_form.html' %}
   </div>
   {% include 'footer.html' %}

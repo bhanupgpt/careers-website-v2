@@ -2,40 +2,31 @@
 <html lang="en">
 <head>
   {% include 'bootstrap.html' %}
-
-  <title>WorkWise Careers</title>
-  
+  <title>WorkWise Careers</title>  
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
   {% include 'nav.html' %}
-  {% include 'banner.html' %}
-  
+  {% include 'banner.html' %}  
   <div class="container">
-    <h1 class="text-center mt-2 mb-4">WorkWise Careers </h1>
-    
+    <h1 class="text-center mt-2 mb-4">WorkWise Careers </h1>    
     <div class="row">
       <div class="col-md-6">
         <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
       <div class="d-none d-md-block col-md-6">
         <img src="/static/ppl.jpg" alt="ppl working" height="320px" >
-      </div>
-      
-    </div>
-    
-    <h2 class="text-center mt-4 mb-4">Job Openings</h2>
-    
+      </div>      
+    </div>    
+    <h2 class="text-center mt-4 mb-4">Job Openings</h2>    
     <div>
       {% for job in jobs %}
         {% include 'openjobs.html'%}
       {% endfor %}
-    </div>
-    
+    </div>    
     <div class="text-center">
       <a href="mailto:bhanu@kgpian.iitkgp.ac.in" type="button" class="btn btn-secondary btn-lg">Contact Us</a>
-    </div>
-  
+    </div>  
 </div>
   {% include 'footer.html' %}
 </body>
