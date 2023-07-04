@@ -1,34 +1,7 @@
 from flask import Flask, render_template, jsonify
-from database import load_jobs_from_db
+from database import load_jobs_from_db, load_job_page_from_db
 
 app = Flask(__name__)
-
-# JOBS = [
-#   {
-#     'id': 1,
-#     'title': 'Data Analyst',
-#     'location': 'Bengaluru, India',
-#     'salary': 'Rs. 12,00,000'
-#   },
-#   {
-#     'id': 2,
-#     'title': 'Front End Engineer',
-#     'location': 'Delhi, India',
-#     'salary': 'Rs. 10,00,000'
-#   },
-#   {
-#     'id': 3,
-#     'title': 'Data Scientist',
-#     'location': 'Remote',
-#     'salary': 'Rs. 15,00,000'
-#   },
-#   {
-#     'id': 4,
-#     'title': 'Backend Engineer',
-#     'location': 'San Francisco, USA',
-#     'salary': '120,000 USD '
-#   },
-# ]
 
 
 # to create html route
@@ -43,6 +16,14 @@ def hello_world():
 def list_jobs():
   jobs_list = load_jobs_from_db()
   return jsonify(jobs_list)
+
+
+@app.route("/job/<id>")  #to create a dynamic route
+def show_job(id):
+  job = load_job_page_from_db(id)
+  if not job:
+    return "Not Found", 404
+  return render_template('jobpage.html', job=job)
 
 
 if __name__ == "__main__":

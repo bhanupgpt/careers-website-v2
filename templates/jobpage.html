@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{% include 'bootstrap.html' %}}
+  <title>{{job.title}} - WorkWise Careers</title>
+</head>
+<body>
+  {% include 'nav.html' %}
+  {% include 'banner.html' %}
+  <div class="container">
+    <h1 class="text-center mt-2 mb-4">WorkWise Careers </h1>
+    <h3>{{job.title}}</h3>
+    
+    <h4 class="mb-2">Location</h4>
+    <p class="lead mt-0">{{job.location}}</p>
+    
+    <h4>Responsibilities</h4>
+    
+    <p>{{job.responsibilities}}</p>
+    <h4>Requirements</h4>
+    <p>{{job.requirements}}</p>
+    <h4>Salary</43>
+    <p>{{job.currency}} {{job.salary}}</p>
+  </div>
+  {% include 'footer.html' %}
+</body>
+</html>
